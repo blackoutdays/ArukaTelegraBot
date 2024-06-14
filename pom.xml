@@ -1,0 +1,414 @@
+<!--&lt;!&ndash;<project xmlns="http://maven.apache.org/POM/4.0.0"&ndash;&gt;-->
+<!--&lt;!&ndash;         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&ndash;&gt;-->
+<!--&lt;!&ndash;         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">&ndash;&gt;-->
+<!--&lt;!&ndash;    <modelVersion>4.0.0</modelVersion>&ndash;&gt;-->
+<!--&lt;!&ndash;    <groupId>com.example</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;    <artifactId>telegram-bot</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;    <version>1.0-SNAPSHOT</version>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <properties>&ndash;&gt;-->
+<!--&lt;!&ndash;        <java.version>11</java.version>&ndash;&gt;-->
+<!--&lt;!&ndash;        <spring-boot.version>2.6.3</spring-boot.version>&ndash;&gt;-->
+<!--&lt;!&ndash;        <lombok.version>1.18.20</lombok.version>&ndash;&gt;-->
+<!--&lt;!&ndash;        <ngrok.version>0.5.0</ngrok.version>&ndash;&gt;-->
+<!--&lt;!&ndash;        <telegrambots.version>6.1.0</telegrambots.version>&ndash;&gt;-->
+<!--&lt;!&ndash;        <spring-web.version>5.3.10</spring-web.version>&ndash;&gt;-->
+<!--&lt;!&ndash;    </properties>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <repositories>&ndash;&gt;-->
+<!--&lt;!&ndash;        <repository>&ndash;&gt;-->
+<!--&lt;!&ndash;            <id>central</id>&ndash;&gt;-->
+<!--&lt;!&ndash;            <url>https://repo.maven.apache.org/maven2</url>&ndash;&gt;-->
+<!--&lt;!&ndash;        </repository>&ndash;&gt;-->
+<!--&lt;!&ndash;    </repositories>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <parent>&ndash;&gt;-->
+<!--&lt;!&ndash;        <groupId>org.springframework.boot</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;        <artifactId>spring-boot-starter-parent</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;        <version>2.6.3</version>&ndash;&gt;-->
+<!--&lt;!&ndash;    </parent>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <dependencies>&ndash;&gt;-->
+<!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;            <groupId>com.ngrok</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <artifactId>ngrok-java</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <version>${ngrok.version}</version>&ndash;&gt;-->
+<!--&lt;!&ndash;        </dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;            <groupId>org.telegram</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <artifactId>telegrambots-spring-boot-starter</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <version>${telegrambots.version}</version>&ndash;&gt;-->
+<!--&lt;!&ndash;        </dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;            <groupId>org.projectlombok</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <artifactId>lombok</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <version>${lombok.version}</version>&ndash;&gt;-->
+<!--&lt;!&ndash;        </dependency>&ndash;&gt;-->
+
+<!--&lt;!&ndash;        &lt;!&ndash; Удалены дублирующиеся зависимости &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        &lt;!&ndash; Удалены org.springframework:spring-core и org.springframework:spring-beans &ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;        &lt;!&ndash; Добавлены недостающие зависимости &ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;            <groupId>org.springframework.boot</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <artifactId>spring-boot-autoconfigure</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <version>${spring-boot.version}</version>&ndash;&gt;-->
+<!--&lt;!&ndash;        </dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;            <groupId>org.springframework.boot</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <artifactId>spring-boot-starter</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;        </dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;            <groupId>org.springframework</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <artifactId>spring-web</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <version>${spring-web.version}</version>&ndash;&gt;-->
+<!--&lt;!&ndash;        </dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;    </dependencies>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <build>&ndash;&gt;-->
+<!--&lt;!&ndash;        <plugins>&ndash;&gt;-->
+<!--&lt;!&ndash;            <plugin>&ndash;&gt;-->
+<!--&lt;!&ndash;                <groupId>org.springframework.boot</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;                <artifactId>spring-boot-maven-plugin</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;            </plugin>&ndash;&gt;-->
+<!--&lt;!&ndash;        </plugins>&ndash;&gt;-->
+<!--&lt;!&ndash;    </build>&ndash;&gt;-->
+<!--&lt;!&ndash;</project>&ndash;&gt;-->
+<!--&lt;!&ndash;<project xmlns="http://maven.apache.org/POM/4.0.0"&ndash;&gt;-->
+<!--&lt;!&ndash;         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"&ndash;&gt;-->
+<!--&lt;!&ndash;         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">&ndash;&gt;-->
+<!--&lt;!&ndash;    <modelVersion>4.0.0</modelVersion>&ndash;&gt;-->
+<!--&lt;!&ndash;    <groupId>com.example</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;    <artifactId>telegram-bot</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;    <version>1.0-SNAPSHOT</version>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <properties>&ndash;&gt;-->
+<!--&lt;!&ndash;        <java.version>11</java.version>&ndash;&gt;-->
+<!--&lt;!&ndash;        <spring-boot.version>2.6.3</spring-boot.version>&ndash;&gt;-->
+<!--&lt;!&ndash;        <lombok.version>1.18.20</lombok.version>&ndash;&gt;-->
+<!--&lt;!&ndash;        <ngrok.version>0.5.0</ngrok.version>&ndash;&gt;-->
+<!--&lt;!&ndash;        <telegrambots.version>6.1.0</telegrambots.version>&ndash;&gt;-->
+<!--&lt;!&ndash;        <spring-web.version>5.3.10</spring-web.version>&ndash;&gt;-->
+<!--&lt;!&ndash;    </properties>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <repositories>&ndash;&gt;-->
+<!--&lt;!&ndash;        <repository>&ndash;&gt;-->
+<!--&lt;!&ndash;            <id>central</id>&ndash;&gt;-->
+<!--&lt;!&ndash;            <url>https://repo.maven.apache.org/maven2</url>&ndash;&gt;-->
+<!--&lt;!&ndash;        </repository>&ndash;&gt;-->
+<!--&lt;!&ndash;    </repositories>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <parent>&ndash;&gt;-->
+<!--&lt;!&ndash;        <groupId>org.springframework.boot</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;        <artifactId>spring-boot-starter-parent</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;        <version>2.6.3</version>&ndash;&gt;-->
+<!--&lt;!&ndash;    </parent>&ndash;&gt;-->
+
+<!--&lt;!&ndash;    <dependencies>&ndash;&gt;-->
+<!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;            <groupId>com.ngrok</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <artifactId>ngrok-java</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <version>${ngrok.version}</version>&ndash;&gt;-->
+<!--&lt;!&ndash;        </dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;            <groupId>org.telegram</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <artifactId>telegrambots-spring-boot-starter</artifactId>&ndash;&gt;-->
+<!--&lt;!&ndash;            <version>${telegrambots.version}</version>&ndash;&gt;-->
+<!--&lt;!&ndash;        </dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;        <dependency>&ndash;&gt;-->
+<!--&lt;!&ndash;            <groupId>org.projectlombok</groupId>&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <artifactId>lombok</artifactId>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <version>${lombok.version}</version>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        </dependency>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    </dependencies>&ndash;&gt;&ndash;&gt;-->
+
+<!--&lt;!&ndash;&lt;!&ndash;    <build>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        <plugins>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            <plugin>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <groupId>org.springframework.boot</groupId>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;                <artifactId>spring-boot-maven-plugin</artifactId>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;            </plugin>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;        </plugins>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;    </build>&ndash;&gt;&ndash;&gt;-->
+<!--&lt;!&ndash;&lt;!&ndash;</project>&ndash;&gt;&ndash;&gt;-->
+<!--<project xmlns="http://maven.apache.org/POM/4.0.0"-->
+<!--         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">-->
+<!--    <modelVersion>4.0.0</modelVersion>-->
+<!--    <groupId>com.example</groupId>-->
+<!--    <artifactId>telegram-bot</artifactId>-->
+<!--    <version>1.0-SNAPSHOT</version>-->
+
+<!--    <properties>-->
+<!--        <java.version>11</java.version>-->
+<!--        <spring-boot.version>2.6.3</spring-boot.version>-->
+<!--        <lombok.version>1.18.20</lombok.version>-->
+<!--        <ngrok.version>0.5.0</ngrok.version>-->
+<!--        <telegrambots.version>6.1.0</telegrambots.version>-->
+<!--        <spring-web.version>5.3.10</spring-web.version>-->
+<!--    </properties>-->
+
+<!--    <repositories>-->
+<!--        <repository>-->
+<!--            <id>central</id>-->
+<!--            <url>https://repo.maven.apache.org/maven2</url>-->
+<!--        </repository>-->
+<!--    </repositories>-->
+
+<!--    <parent>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-starter-parent</artifactId>-->
+<!--        <version>2.6.3</version>-->
+<!--    </parent>-->
+
+<!--    <dependencies>-->
+<!--        <dependency>-->
+<!--            <groupId>com.ngrok</groupId>-->
+<!--            <artifactId>ngrok-java</artifactId>-->
+<!--            <version>${ngrok.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.telegram</groupId>-->
+<!--            <artifactId>telegrambots-spring-boot-starter</artifactId>-->
+<!--            <version>${telegrambots.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.projectlombok</groupId>-->
+<!--            <artifactId>lombok</artifactId>-->
+<!--            <version>${lombok.version}</version>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
+
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
+<!--</project>-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.example</groupId>
+    <artifactId>aruka-telegram-bot</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <java.version>11</java.version>
+        <spring-boot.version>2.6.3</spring-boot.version>
+        <lombok.version>1.18.20</lombok.version>
+        <ngrok.version>0.5.0</ngrok.version>
+        <telegrambots.version>6.1.0</telegrambots.version>
+        <spring-web.version>5.3.10</spring-web.version>
+        <httpclient.version>4.5.13</httpclient.version>
+        <slf4j.version>1.7.33</slf4j.version>
+    </properties>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.6.3</version>
+    </parent>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.ngrok</groupId>
+            <artifactId>ngrok-java</artifactId>
+            <version>${ngrok.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.telegram</groupId>
+            <artifactId>telegrambots-spring-boot-starter</artifactId>
+            <version>${telegrambots.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>${httpclient.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j.version}</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+<!--<project xmlns="http://maven.apache.org/POM/4.0.0"-->
+<!--         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">-->
+<!--    <modelVersion>4.0.0</modelVersion>-->
+<!--    <groupId>com.example</groupId>-->
+<!--    <artifactId>telegram-bot</artifactId>-->
+<!--    <version>1.0-SNAPSHOT</version>-->
+
+<!--    <properties>-->
+<!--        <java.version>11</java.version>-->
+<!--        <spring-boot.version>2.6.3</spring-boot.version>-->
+<!--        <lombok.version>1.18.20</lombok.version>-->
+<!--        <ngrok.version>0.5.0</ngrok.version>-->
+<!--        <telegrambots.version>6.1.0</telegrambots.version>-->
+<!--        <httpclient.version>4.5.13</httpclient.version>-->
+<!--        <slf4j.version>1.7.33</slf4j.version>-->
+<!--    </properties>-->
+
+<!--    <parent>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-starter-parent</artifactId>-->
+<!--        <version>${spring-boot.version}</version>-->
+<!--    </parent>-->
+
+<!--    <dependencies>-->
+
+
+<!--        &lt;!&ndash; NGrok Java Client &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.ngrok</groupId>-->
+<!--            <artifactId>ngrok-java</artifactId>-->
+<!--            <version>${ngrok.version}</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; Telegram Bots Spring Boot Starter &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.telegram</groupId>-->
+<!--            <artifactId>telegrambots-spring-boot-starter</artifactId>-->
+<!--            <version>${telegrambots.version}</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; Lombok for easier Java code writing &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.projectlombok</groupId>-->
+<!--            <artifactId>lombok</artifactId>-->
+<!--            <version>${lombok.version}</version>-->
+<!--            <optional>true</optional>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; Apache HttpClient for making HTTP requests &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.apache.httpcomponents</groupId>-->
+<!--            <artifactId>httpclient</artifactId>-->
+<!--            <version>${httpclient.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-web</artifactId>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.springframework.boot</groupId>-->
+<!--                    <artifactId>spring-boot-autoconfigure</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; SLF4J API for logging &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.slf4j</groupId>-->
+<!--            <artifactId>slf4j-api</artifactId>-->
+<!--            <version>${slf4j.version}</version>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
+
+<!--    &lt;!&ndash; Spring Boot Maven Plugin &ndash;&gt;-->
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>org.springframework.boot</groupId>-->
+<!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
+<!--</project>-->
+
+
+
+
+
+
+
+<!--<project xmlns="http://maven.apache.org/POM/4.0.0"-->
+<!--         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">-->
+<!--    <modelVersion>4.0.0</modelVersion>-->
+<!--    <groupId>com.example</groupId>-->
+<!--    <artifactId>telegram-bot</artifactId>-->
+<!--    <version>1.0-SNAPSHOT</version>-->
+
+<!--    <parent>-->
+<!--        <groupId>org.springframework.boot</groupId>-->
+<!--        <artifactId>spring-boot-starter-parent</artifactId>-->
+<!--        <version>2.7.0</version> &lt;!&ndash; Make sure this matches &ndash;&gt;-->
+<!--    </parent>-->
+<!--    <properties>-->
+<!--        &lt;!&ndash; Define properties here &ndash;&gt;-->
+<!--        <java.version>11</java.version>-->
+<!--        <lombok.version>1.18.20</lombok.version>-->
+<!--        <ngrok.version>0.5.0</ngrok.version>-->
+<!--        <telegrambots.version>6.1.0</telegrambots.version>-->
+<!--        <httpclient.version>4.5.13</httpclient.version>-->
+<!--        <slf4j.version>1.7.33</slf4j.version>-->
+<!--        <spring.version>2.7.0</spring.version> &lt;!&ndash; Ensure consistency here &ndash;&gt;-->
+<!--    </properties>-->
+
+<!--    <dependencies>-->
+<!--        &lt;!&ndash; Dependencies here &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework</groupId>-->
+<!--            <artifactId>spring-web</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.telegram</groupId>-->
+<!--            <artifactId>telegrambots-meta</artifactId>-->
+<!--            <version>${telegrambots.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter</artifactId>-->
+<!--        </dependency>-->
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-autoconfigure</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.ngrok</groupId>-->
+<!--            <artifactId>ngrok-java</artifactId>-->
+<!--            <version>${ngrok.version}</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.telegram</groupId>-->
+<!--            <artifactId>telegrambots</artifactId>-->
+<!--            <version>${telegrambots.version}</version>-->
+<!--        </dependency>-->
+<!--    </dependencies>-->
+
+<!--    &lt;!&ndash; Build configuration &ndash;&gt;-->
+<!--</project>-->
